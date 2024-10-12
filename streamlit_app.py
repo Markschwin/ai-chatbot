@@ -49,6 +49,7 @@ if uploaded_file is not None:
         # Load the uploaded CSV file 
         st.session_state.uploaded_data = pd.read_csv(uploaded_file) 
         st.success("File successfully uploaded and read.")
+        
         # Display the content of the CSV
         st.write("### Uploaded Data Preview") 
         st.dataframe(st.session_state.uploaded_data.head())
