@@ -4,6 +4,14 @@ import pandas as pd
 import numpy as np
 
 st.title("🤖 My chatbot app")
+
+gemini_api_key = st.text_input("Gemini API Key: ", placeholder="Type your API Key here...", type="password")
+genai.configure(api_key=gemini_api_key)
+model = genai.GenerativeModel("gemini-pro")
+response = model.generate_content(user_input)
+bot_response = response.text
+
+
 #user input box
 #if user_input  := st.text_input("You : ", placeholder = "Type your message here..."):
     #st.write(f"User Input : {user_input}")
